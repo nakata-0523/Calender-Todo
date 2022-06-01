@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<div class="alert alert-primary" role="alert">
+    <h3>title</h3>
+</div>
+{% endblock header %}
+
+{% block content %}
+
+<div class="container">
+    <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+        <p>title:<input type="text" name="title"></p>
+        <p>content:<input type="text" name="content"></p>
+    
+        <input type="submit" value="create">
+    </form>
+</div>
+{% endblock content %}

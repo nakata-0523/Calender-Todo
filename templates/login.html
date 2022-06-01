@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<body>
+    <div class="container text-center w-25"  style="margin-top: 150px;">
+        <form class="form-signin" method="POST">{% csrf_token %}
+            <h1 class="h3 mb-5 font-weight-normal">ログインする</h1>
+            <label for="inputEmail" class="sr-only">ユーザー名</label>
+            <input type="text" id="inputEmail" class="form-control" placeholder="ユーザー名" name="username" required autofocus>
+            <label for="inputPassword" class="sr-only">パスワード</label>
+            <input type="password" id="inputPassword" class="form-control mb-5" placeholder="パスワード" name="password" required>
+
+            <div>
+                <button class="btn btn-lg btn-primary btn-block mb-5" type="submit">ログイン</button>
+                <p class="text-right">
+                    <a href="{% url 'signup' %}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">新規ユーザー登録</a>
+                    <a href="{% url 'admin_login' %}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">管理者ログイン</a>
+                </p>
+            </div>
+        </form>
+    </div>
+</body>
+
+{% endblock content %}

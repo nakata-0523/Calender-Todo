@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<div class="alert alert-primary" role="alert">
+    <h3>title</h3>
+</div>
+{% endblock header %}
+
+{% block content %}
+
+<div class="container">
+    <p>ログイン中のユーザー：{{ login_user }}</p>
+
+    {% for item in activ_list %}
+    <li>{{ item }}</li>
+    {% endfor %}
+
+    <p class="text-right"><a href="{% url 'logout' %}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">ログアウト</a></p>
+</div>
+{% endblock content %}
